@@ -114,7 +114,7 @@ void AShooterCharacter::Shoot()
 
 void AShooterCharacter::Reload()
 {
-	if (!bIsReloading)
+	if (!bIsReloading && (GetAmmoReserve() > 0) && (GetAmmoCount < 30))
 	{
 		bIsReloading = true;
 		const float ReloadTime = Gun->GetReloadTime();
